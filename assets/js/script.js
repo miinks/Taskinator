@@ -25,6 +25,9 @@ var taskDataObj = {
 
   createTaskEl(taskDataObj);
 
+};
+var createTaskEl = function(taskDataObj) {
+
     var listItemEl = document.createElement("li");
     listItemEl.className = "task-item";
 
@@ -39,4 +42,4 @@ var taskDataObj = {
     
   };
 
-  formEl.addEventListener("submit", createTaskHandler);
+  formEl.addEventListener("submit", taskFormHandler);
