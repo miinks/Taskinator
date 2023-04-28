@@ -44,7 +44,6 @@ var deleteButtonEl = document.createElement("button");
 
     actionContainerEl.appendChild(deleteButtonEl);
 
-    return actionContainerEl;
 
 var statusSelectEl = document.createElement("select");
     statusSelectEl.className = "select-status";
@@ -53,8 +52,19 @@ var statusSelectEl = document.createElement("select");
 
     actionContainerEl.appendChild(statusSelectEl);
 
+var statusChoices = ["To Do", "In Progress", "Completed"];
 
+for (var i = 0; i < statusChoices.length; i++) {
+    var statusOptionEl = document.createElement("option");
+    statusOptionEl.textContent = statusChoices[i];
+    statusOptionEl.setAttribute("value", statusChoices[i]);
 
+    statusSelectEl.appendChild(statusOptionEl);
+
+    return actionContainerEl;
+
+}
+  
   };
 
 
@@ -74,6 +84,10 @@ var createTaskEl = function(taskDataObj) {
     listItemEl.appendChild(taskInfoEl);
 
     console.dir(listItemEl);
+
+    var taskActionsEl = createTaskActions(taskIdCounter);
+    listItemEl.appendChild(taskActionsEl);
+
 
     tasksToDoEl.appendChild(listItemEl);
 
