@@ -46,6 +46,14 @@ var deleteButtonEl = document.createElement("button");
 
     return actionContainerEl;
 
+var statusSelectEl = document.createElement("select");
+    statusSelectEl.className = "select-status";
+    statusSelectEl.setAttribute("name", "status-change");
+    statusSelectEl.setAttribute("data-task-id", taskId);
+
+    actionContainerEl.appendChild(statusSelectEl);
+
+
 
   };
 
