@@ -2,12 +2,15 @@ var taskIdCounter = 0;
 
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
+var tasksInProgressEl = document.querySelector("#tasks-in-progress");
+var tasksCompletedEl = document.querySelector("#tasks-completed");
+var pageContentEl = document.querySelectorAll("#page-content");
+
 
 var taskFormHandler = function(event) {
     event.preventDefault();
-
-var taskNameInput = document.querySelector("input[name='task-name']").value;
-var taskTypeInput = document.querySelector("select[name='task-type']").value;
+    var taskNameInput = document.querySelector("input[name='task-name']").value;
+    var taskTypeInput = document.querySelector("select[name='task-type']").value;
 
 if (!taskNameInput === "" || !taskTypeInput === "") {
     alert("You need to fill out the task form!");
