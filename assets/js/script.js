@@ -17,11 +17,16 @@ if (!taskNameInput === "" || !taskTypeInput === "") {
     return false;
   }
 
-formEl.reset();
-
 document.querySelector("input[name='task-name']").value = "";
 document.querySelector("select[name='task-type']").selectedIndex = 0;
 
+var isEdit = formEl.hasAttribute("data-task-id");
+
+  if (isEdit) {
+    var taskId = formEl.getAttribute("data-task-id");
+    completeEditTask(taskNameInput, taskTypeInput, taskId);
+  } else {
+    
 var taskDataObj = {
     name: taskNameInput,
     type: taskTypeInput
