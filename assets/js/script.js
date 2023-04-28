@@ -26,16 +26,27 @@ var taskDataObj = {
 
   createTaskEl(taskDataObj);
   
-  var createTaskActions = function(taskId) {
-    var actionContainerEl = document.createElement("div");
+var createTaskActions = function(taskId) {
+var actionContainerEl = document.createElement("div");
     actionContainerEl.className = "task-actions";
 
-    var editButtonEl = document.createElement("button");
+var editButtonEl = document.createElement("button");
     editButtonEl.textContent = "Edit";
     editButtonEl.className = "btn edit-btn";
     editButtonEl.setAttribute("data-task-id", taskId);
     
     actionContainerEl.appendChild(editButtonEl);
+
+var deleteButtonEl = document.createElement("button");
+    deleteButtonEl.textContent = "Delete";
+    deleteButtonEl.className = "btn delete-btn";
+    deleteButtonEl.setAttribute("data-task-id", taskId);
+
+    actionContainerEl.appendChild(deleteButtonEl);
+
+    return actionContainerEl;
+
+
   };
 
 
