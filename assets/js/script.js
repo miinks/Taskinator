@@ -25,8 +25,17 @@ var taskDataObj = {
   };
 
   createTaskEl(taskDataObj);
+  
   var createTaskActions = function(taskId) {
+    var actionContainerEl = document.createElement("div");
+    actionContainerEl.className = "task-actions";
 
+    var editButtonEl = document.createElement("button");
+    editButtonEl.textContent = "Edit";
+    editButtonEl.className = "btn edit-btn";
+    editButtonEl.setAttribute("data-task-id", taskId);
+    
+    actionContainerEl.appendChild(editButtonEl);
   };
 
 
