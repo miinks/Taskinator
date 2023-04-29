@@ -127,4 +127,23 @@ var taskButtonHandler = function(event) {
       }
     };
 
-  formEl.addEventListener("submit", taskFormHandler);
+ var taskStatusChangeHandler = function(event) {
+        console.log(event.target.value);
+        
+    var taskId = event.target.getAttribute("data-task-id");
+
+    var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
+
+    var statusValue = event.target.value.toLowerCase();
+
+  if (statusValue === "to do") {
+    tasksToDoEl.appendChild(taskSelected);
+  } else if (statusValue === "in progress") {
+    tasksInProgressEl.appendChild(taskSelected);
+  } else if (statusValue === "completed") {
+    tasksCompletedEl.appendChild(taskSelected);
+  }
+};
+
+        
+    formEl.addEventListener("submit", taskFormHandler);
