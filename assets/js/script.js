@@ -175,4 +175,6 @@ var deleteTask = function(taskId) {
     formEl.addEventListener("submit", taskFormHandler);
     pageContentEl.addEventListener("click", taskButtonHandler);
     pageContentEl.addEventListener("change", taskStatusChangeHandler);
-    
+
+    formEl.addEventListener("submit", taskFormHandler);
+
