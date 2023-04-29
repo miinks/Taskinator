@@ -94,11 +94,17 @@ for (var i = 0; i < statusChoices.length; i++) {
 
     return actionContainerEl;
 
-}
+    }
   
   };
 
-
+var completeEditTask = function(taskName, taskType, taskId) {
+    var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
+   
+    taskSelected.querySelector("h3.task-name").textContent = taskName;
+    taskSelected.querySelector("span.task-type").textContent = taskType;
+  
+}
 
 
   formEl.addEventListener("submit", taskFormHandler);
