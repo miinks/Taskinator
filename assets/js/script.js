@@ -104,7 +104,27 @@ var completeEditTask = function(taskName, taskType, taskId) {
     taskSelected.querySelector("h3.task-name").textContent = taskName;
     taskSelected.querySelector("span.task-type").textContent = taskType;
   
-}
+    alert("Task Updated!");
 
+    formEl.removeAttribute("data-task-id");
+
+    formEl.querySelector("#save-task").textContent = "Add Task";
+
+};
+
+var taskButtonHandler = function(event) {
+
+    var targetEl = event.target;
+
+    if (targetEl.matches(".edit-btn")) {
+        console.log("edit", targetEl);
+        var taskId = targetEl.getAttribute("data-task-id");
+        editTask(taskId);
+      } else if (targetEl.matches(".delete-btn")) {
+        console.log("delete", targetEl);
+        var taskId = targetEl.getAttribute("data-task-id");
+        deleteTask(taskId);
+      }
+    };
 
   formEl.addEventListener("submit", taskFormHandler);
