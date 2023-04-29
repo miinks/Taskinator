@@ -26,13 +26,36 @@ var isEdit = formEl.hasAttribute("data-task-id");
     var taskId = formEl.getAttribute("data-task-id");
     completeEditTask(taskNameInput, taskTypeInput, taskId);
   } else {
-    
+
 var taskDataObj = {
     name: taskNameInput,
     type: taskTypeInput
   };
 
   createTaskEl(taskDataObj);
+    }
+};
+
+var createTaskEl = function(taskDataObj) {
+
+    var listItemEl = document.createElement("li");
+    listItemEl.className = "task-item";
+    listItemEl.setAttribute("data-task-id", taskIdCounter);
+
+
+    var taskInfoEl = document.createElement("div");
+    taskInfoEl.className = "task-info";
+    taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class='task-type'>" + taskDataObj.type + "</span>";
+    listItemEl.appendChild(taskInfoEl);
+
+    
+
+    var taskActionsEl = createTaskActions(taskIdCounter);
+    listItemEl.appendChild(taskActionsEl);
+    tasksToDoEl.appendChild(listItemEl);
+
+    taskIdCounter++;
+  };
   
 var createTaskActions = function(taskId) {
 var actionContainerEl = document.createElement("div");
@@ -77,29 +100,5 @@ for (var i = 0; i < statusChoices.length; i++) {
 
 
 
-};
-var createTaskEl = function(taskDataObj) {
-
-    var listItemEl = document.createElement("li");
-    listItemEl.className = "task-item";
-
-    listItemEl.setAttribute("data-task-id", taskIdCounter);
-
-
-    var taskInfoEl = document.createElement("div");
-    taskInfoEl.className = "task-info";
-    taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class='task-type'>" + taskDataObj.type + "</span>";
-    listItemEl.appendChild(taskInfoEl);
-
-    console.dir(listItemEl);
-
-    var taskActionsEl = createTaskActions(taskIdCounter);
-    listItemEl.appendChild(taskActionsEl);
-
-
-    tasksToDoEl.appendChild(listItemEl);
-
-    taskIdCounter++;
-  };
 
   formEl.addEventListener("submit", taskFormHandler);
