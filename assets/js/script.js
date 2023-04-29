@@ -165,5 +165,14 @@ var editTask = function(taskId) {
 
 };
 
+var deleteTask = function(taskId) {
+    console.log(taskId);
+    var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
+    taskSelected.remove();
+  };
+
     
-     formEl.addEventListener("submit", taskFormHandler);
+    formEl.addEventListener("submit", taskFormHandler);
+    pageContentEl.addEventListener("click", taskButtonHandler);
+    pageContentEl.addEventListener("change", taskStatusChangeHandler);
+    
