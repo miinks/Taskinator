@@ -145,5 +145,25 @@ var taskButtonHandler = function(event) {
   }
 };
 
+var editTask = function(taskId) {
+    console.log(taskId);
         
-    formEl.addEventListener("submit", taskFormHandler);
+    var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
+
+    var taskName = taskSelected.querySelector("h3.task-name").textContent;
+    console.log(taskName);
+    
+    var taskType = taskSelected.querySelector("span.task-type").textContent;
+    console.log(taskType);
+
+    document.querySelector("input[name='task-name']").value = taskName;
+    document.querySelector("select[name='task-type']").value = taskType;
+
+    formEl.setAttribute("data-task-id", taskId);
+
+    formEl.querySelector("#save-task").textContent = "Save Task";
+
+};
+
+    
+     formEl.addEventListener("submit", taskFormHandler);
