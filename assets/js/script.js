@@ -31,10 +31,13 @@ var isEdit = formEl.hasAttribute("data-task-id");
 
 var taskDataObj = {
     name: taskNameInput,
-    type: taskTypeInput
+    type: taskTypeInput,
+    status: "to do"
   };
 
   createTaskEl(taskDataObj);
+    console.log(taskDataObj);
+    console.log(taskDataObj.status);
     }
 };
 
@@ -55,7 +58,10 @@ var createTaskEl = function(taskDataObj) {
     var taskActionsEl = createTaskActions(taskIdCounter);
     listItemEl.appendChild(taskActionsEl);
     tasksToDoEl.appendChild(listItemEl);
-
+    
+    taskDataObj.id = taskIdCounter;
+    tasks.push(taskDataObj);
+    
     taskIdCounter++;
   };
   
