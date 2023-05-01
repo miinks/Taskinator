@@ -127,7 +127,9 @@ for (var i = 0; i < statusChoices.length; i++) {
   };
 
 var completeEditTask = function(taskName, taskType, taskId) {
-    var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
+    var taskSelected = document.querySelector(
+      ".task-item[data-task-id='" + taskId + "']"
+      );
    
     taskSelected.querySelector("h3.task-name").textContent = taskName;
     taskSelected.querySelector("span.task-type").textContent = taskType;
@@ -137,13 +139,15 @@ var completeEditTask = function(taskName, taskType, taskId) {
     tasks[i].name = taskName;
     tasks[i].type = taskType;
    }
-  };
+  }
   
     alert("Task Updated!");
 
     formEl.removeAttribute("data-task-id");
 
     formEl.querySelector("#save-task").textContent = "Add Task";
+
+    saveTasks();
 
 };
 
