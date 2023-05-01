@@ -6,6 +6,8 @@ var tasksInProgressEl = document.querySelector("#tasks-in-progress");
 var tasksCompletedEl = document.querySelector("#tasks-completed");
 var pageContentEl = document.querySelectorAll("#page-content");
 
+var tasks = [];
+
 
 var taskFormHandler = function(event) {
     event.preventDefault();
