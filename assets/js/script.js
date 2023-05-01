@@ -114,8 +114,8 @@ var completeEditTask = function(taskName, taskType, taskId) {
 
   for (var i = 0; i < task.length; i++) {
    if (tasks[i].id === parseInt(taskId)){
-    task[i].name = taskName;
-    task[i].type = taskType;
+    tasks[i].name = taskName;
+    tasks[i].type = taskType;
    }
   };
   
@@ -145,11 +145,18 @@ var taskButtonHandler = function(event) {
  var taskStatusChangeHandler = function(event) {
         console.log(event.target.value);
         
+        for (var i = 0; i < tasks.length; i++) {
+          if (tasks[i].id === parseInt(taskId)){
+        }
+      }
+
+        
     var taskId = event.target.getAttribute("data-task-id");
 
     var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
 
     var statusValue = event.target.value.toLowerCase();
+
 
   if (statusValue === "to do") {
     tasksToDoEl.appendChild(taskSelected);
@@ -158,6 +165,8 @@ var taskButtonHandler = function(event) {
   } else if (statusValue === "completed") {
     tasksCompletedEl.appendChild(taskSelected);
   }
+
+  
 };
 
 var editTask = function(taskId) {
@@ -181,9 +190,15 @@ var editTask = function(taskId) {
 };
 
 var deleteTask = function(taskId) {
+
     console.log(taskId);
     var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
     taskSelected.remove();
+
+    var updatedTaskArr = [];
+
+    
+
   };
 
     
