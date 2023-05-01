@@ -216,6 +216,6 @@ var deleteTask = function(taskId) {
     
     
 var saveTasks = function() {
-localStorage.SetItem("tasks", tasks);
+localStorage.SetItem("tasks", JSON.stringify(tasks));
     }
 
