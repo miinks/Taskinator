@@ -36,8 +36,7 @@ var taskDataObj = {
   };
 
   createTaskEl(taskDataObj);
-    console.log(taskDataObj);
-    console.log(taskDataObj.status);
+  
     }
 };
 
@@ -143,7 +142,6 @@ var taskButtonHandler = function(event) {
     };
 
  var taskStatusChangeHandler = function(event) {
-        console.log(event.target.value);
         
         for (var i = 0; i < tasks.length; i++) {
           if (tasks[i].id === parseInt(taskId)){
