@@ -197,6 +197,13 @@ var deleteTask = function(taskId) {
 
     var updatedTaskArr = [];
 
+    for (var i = 0; i < tasks.length; i++) {
+      if (tasks[i].id !== parseInt(taskId)) {
+        updatedTaskArr.push(tasks[i]);
+      }
+    }
+  
+  tasks = updatedTaskArr;
     
 
   };
