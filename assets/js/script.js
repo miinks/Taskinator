@@ -257,7 +257,7 @@ var deleteTask = function(taskId) {
     if (!savedTasks) {
       return false;
     }
-    console.log("Saved tasks found!");
+    console.log("Saved task found!");
 
 
 
@@ -273,8 +273,6 @@ var deleteTask = function(taskId) {
 
 formEl.addEventListener("submit", taskFormHandler);
 
-
-pageContentEl.addEventListener("click", taskButtonHandler);
 
 pageContentEl.addEventListener("click", taskButtonHandler);
 
