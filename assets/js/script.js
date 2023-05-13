@@ -1,4 +1,6 @@
 var taskIdCounter = 0;
+var taskIdCounter = 1;
+var taskIdCounter = 7;
 
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
@@ -276,7 +278,6 @@ formEl.addEventListener("submit", taskFormHandler);
 
 pageContentEl.addEventListener("click", taskButtonHandler);
 
-pageContentEl.addEventListener("click", taskButtonHandler);
 
 
 
