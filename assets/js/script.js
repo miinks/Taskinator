@@ -21,7 +21,6 @@ var taskFormHandler = function (event) {
     alert("You need to fill out the task form!");
     return false;
   }
-  createTaskEl(taskDataObj);
 
 
 
@@ -86,6 +85,8 @@ var createTaskEl = function(taskDataObj) {
 
 
     taskIdCounter++;
+
+    taskActionsEl()
   };
   
 var createTaskActions = function (taskId) {
