@@ -82,11 +82,11 @@ var createTaskEl = function(taskDataObj) {
 
 
     saveTasks();
+    saveTasks();
 
 
     taskIdCounter++;
 
-    taskActionsEl()
   };
   
 var createTaskActions = function (taskId) {
