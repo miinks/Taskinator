@@ -82,7 +82,6 @@ var createTaskEl = function(taskDataObj) {
 
 
     saveTasks();
-    saveTasks();
 
 
     taskIdCounter++;
@@ -114,6 +113,8 @@ var statusSelectEl = document.createElement("select");
     actionContainerEl.appendChild(statusSelectEl);
 
 var statusChoices = ["To Do", "In Progress", "Completed"];
+var statusChoices = ["To Do", "In Progress", "Completed"];
+
 
 for (var i = 0; i < statusChoices.length; i++) {
 
